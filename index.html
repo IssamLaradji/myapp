@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Challenge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            background: white;
+            color: #6a11cb;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+        .btn:hover {
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Test Your Knowledge!</h1>
+        <p id="question">Think you're a trivia master? Take the challenge and prove your skills!</p>
+        <button class="btn" onclick="nextQuestion()">Next Question</button>
+    </div>
+
+    <script>
+        const questions = [
+            "What is the capital of France?",
+            "Who wrote 'To Kill a Mockingbird'?",
+            "What is the largest planet in our solar system?"
+        ];
+        let index = 0;
+        
+        function nextQuestion() {
+            if (index < questions.length) {
+                document.getElementById('question').textContent = questions[index];
+                index++;
+            } else {
+                document.getElementById('question').textContent = "You're all done! Thanks for playing!";
+            }
+        }
+    </script>
+</body>
+</html>
